@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+message EmptyStream{}
+
+
+message Msg {
+    string name =1;
+    string message =2;
+    string friendname =3;
+}
+
+service Messenger {
+
+    rpc MsgStream (EmptyStream) returns (stream Msg);
+    rpc SendMsg (Msg) returns (stream Msg);
+}
+
+
+
+

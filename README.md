@@ -10,7 +10,7 @@ A client server gRPC chat application
 ## Steps
 1. Install requirements.txt
 ```
-python3 requirements.txt
+pip3 install -r requirements.txt
 ```
 2. Run server on any port
 ```

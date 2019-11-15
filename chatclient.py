@@ -19,7 +19,7 @@ class Client:
 
     def __init__(self, u: str):
         with open("config.yaml", "r") as configFile:
-            config = yaml.load(configFile)
+            config = yaml.load(configFile, Loader=yaml.FullLoader)
         configFile.close()
         userlist =config["users"]
         if u in userlist:    
@@ -71,7 +71,7 @@ class Client:
         """
         This method is called when user enters something into the textbox
         """
-        #print('2')
+       
         n = messenger_pb2.Msg()
         n.name = self.username
         n.message = self.text
@@ -84,6 +84,6 @@ class Client:
 
 if __name__ == '__main__':
     while True:
-        c = Client(sys.argv[1]) # client object c is created
+        c = Client(sys.argv[1]) 
     
     
